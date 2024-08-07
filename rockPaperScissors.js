@@ -1,6 +1,6 @@
 // creat the user choice function
 const getUserChoice = (userInput) => {
-    userInput = userInput.toLoweCase()
+    userInput = userInput.toLowerCase()
 
     if (userInput==='rock' || userInput==='paper' || userInput==='scissors') {
         return userInput
@@ -14,15 +14,15 @@ const getUserChoice = (userInput) => {
 }
 // create the computer choice function
 const getComputerChoice = () => { 
-    Math.floor(Math.random()*3);
+    const random = Math.floor(Math.random()*3);
     switch (random) {
 
         case 0:
-           return 'paper'
+           return 'paper';
         case 1:
-            return 'rock'
+            return 'rock';
         case 0:
-            return 'scissors'
+            return 'scissors';
 
     } 
 }
@@ -54,20 +54,22 @@ const compareChoices = (userChoice,computerChoice) => {
         if (computerChoice==='paper') {
             return 'you won'
         } else if (computerChoice==='rock') {
-            'computer won'
+            return 'computer won'
         }
     }
 
 }
-// create a function tHat dtermines the winner
+// create a function that determines the winner
 const determineWinner = () => {
 
-    const person = getUserChoice()
-    console.log('your choosed ' + person)
+    const person = getUserChoice('scissors')
+    console.log('You choosed ' + person)
 
     const computer = getComputerChoice()
     console.log('The machine choosed' + computer)
 
-    const result = determineWinner(person,computer)
-    console.log(result)
+    console.log(compareChoices( person , computer ))
+
 }
+
+determineWinner();
